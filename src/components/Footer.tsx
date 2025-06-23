@@ -18,6 +18,9 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Transformamos docentes en Titanes de la innovación educativa con IA.
             </p>
+            <p className="text-gray-400 text-sm">
+              Contacto: <a href="mailto:hola@soyrenzoai.com" className="text-white hover:underline">hola@soyrenzoai.com</a>
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -36,7 +39,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Sígueme</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/soyrenzoai/" 
+                href="https://instagram.com/soyrenzoai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
