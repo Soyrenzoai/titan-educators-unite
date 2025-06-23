@@ -1,5 +1,8 @@
 name: Build static site and push to deploy
 
+permissions:
+  contents: write       # ← habilita push a tu propio repo
+
 on:
   push:
     branches: [ main ]     # ← main recibe los cambios de lovable
