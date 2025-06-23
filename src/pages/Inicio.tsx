@@ -48,7 +48,7 @@ const Inicio = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 text-lg text-[#0A0A0A]">
             <p>• Hola, soy Renzo Vigiani: marketer EdTech y formador de docentes.</p>
-            <p>• Trabajo en NotDini potenciando clases con IA y gamificación.</p>
+            <p>• Trabajo en Notnini potenciando clases con IA y gamificación.</p>
             <p>• Llevo +18 meses ayudando a +300 profes de Latinoamérica a ahorrar tiempo y motivar a sus alumnos.</p>
           </div>
         </div>
