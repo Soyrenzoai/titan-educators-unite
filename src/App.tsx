@@ -4,11 +4,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Viaje from "./pages/Viaje";
-import Recursos from "./pages/Recursos";
+import Inicio from "./pages/Inicio";
+import Bio from "./pages/Bio";
+import Newsletter from "./pages/Newsletter";
+import ConvierteteEnTitan from "./pages/ConvierteteEnTitan";
 import Comunidad from "./pages/Comunidad";
-import SobreMi from "./pages/SobreMi";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,11 +20,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/viaje" element={<Viaje />} />
-          <Route path="/recursos" element={<Recursos />} />
+          <Route path="/" element={<Inicio />} />
+          <Route path="/bio" element={<Bio />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/conviertete-en-titan" element={<ConvierteteEnTitan />} />
           <Route path="/comunidad" element={<Comunidad />} />
-          <Route path="/sobre-mi" element={<SobreMi />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

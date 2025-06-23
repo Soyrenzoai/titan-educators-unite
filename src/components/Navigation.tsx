@@ -9,10 +9,10 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/", label: "Inicio" },
-    { path: "/viaje", label: "Viaje" },
-    { path: "/recursos", label: "Recursos" },
+    { path: "/bio", label: "Bio" },
+    { path: "/newsletter", label: "Newsletter" },
+    { path: "/conviertete-en-titan", label: "Conviértete en Titán" },
     { path: "/comunidad", label: "Comunidad" },
-    { path: "/sobre-mi", label: "Sobre mí" },
   ];
 
   return (

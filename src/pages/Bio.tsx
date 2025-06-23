@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Heart, Target, Lightbulb } from "lucide-react";
 
-const SobreMi = () => {
+const Bio = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7f9fc] to-white">
       <Navigation />
@@ -13,11 +13,11 @@ const SobreMi = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Hola, soy 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005cf0] to-[#ff6f3c]"> Renzo</span>
+              ¿Quieres ser mejor, vivir una gran vida y cambiar
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005cf0] to-[#ff6f3c]"> al mundo?</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              El docente que se convirtió en Titán y ahora ayuda a otros a hacer lo mismo.
+              Yo quiero ayudarte
             </p>
           </div>
 
@@ -42,19 +42,17 @@ const SobreMi = () => {
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                 <h2 className="text-2xl font-bold mb-4 flex items-center">
                   <Heart className="w-6 h-6 text-red-500 mr-3" />
-                  Mi historia
+                  ¿Qué he hablado? Soy Renzo Echávez
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Hace 5 años era como tú: un docente apasionado pero agotado, pasando horas corrigiendo exámenes 
-                  y preparando clases que a veces no conectaban con mis estudiantes.
+                  Llevo 7 años de experiencia en el área del desarrollo personal.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Todo cambió cuando descubrí el poder de la IA para la educación. No solo recuperé mi tiempo, 
-                  sino que mis clases se transformaron en experiencias que mis estudiantes esperaban con ansias.
+                  He realizado +500 conferencias y he contenido llegando a +500 millones de personas.
                 </p>
                 <p className="text-gray-600">
-                  Desde San Miguel de Tucumán, Argentina, he ayudado a más de 1,000 docentes latinoamericanos 
-                  a convertirse en los Titanes que sus aulas necesitan.
+                  Mi misión es ayudar a que tengas sesión, que vivas una gran vida, y que puedas establecer mentes 
+                  sobre la sociedad.
                 </p>
               </div>
 
@@ -62,49 +60,50 @@ const SobreMi = () => {
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                 <h2 className="text-2xl font-bold mb-4 flex items-center">
                   <Target className="w-6 h-6 text-[#005cf0] mr-3" />
-                  Mi misión
+                  Pero eso también hizo mi conocer
                 </h2>
-                <p className="text-gray-600">
-                  Democratizar el acceso a herramientas de IA para docentes de secundaria en Latinoamérica, 
-                  porque creo firmemente que la educación del futuro se construye hoy, en nuestras aulas, 
-                  con docentes empoderados y estudiantes inspirados.
+                <ul className="space-y-3 text-gray-600">
+                  <li>• Por adentro a Dios.</li>
+                  <li>• Fui a terapia.</li>
+                  <li>• pedí consejo.</li>
+                  <li>• mejoré mi salud.</li>
+                  <li>• luché por mis metas.</li>
+                </ul>
+                <p className="text-gray-600 mt-4">
+                  En 2016 mi vida dio un vivo memorable; me volví viral perdiendo a un hermano y comencé a crear contenido positivo en redes sociales.
                 </p>
-              </div>
-
-              {/* Story of Titanes */}
-              <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-8 rounded-xl border border-blue-100">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <Lightbulb className="w-6 h-6 text-[#ff6f3c] mr-3" />
-                  El nacimiento de Titanes de la Educación
-                </h2>
-                <p className="text-gray-600 mb-4">
-                  El nombre surgió una noche mientras preparaba clases hasta las 2 AM. Pensé: "Los docentes somos 
-                  como titanes, cargamos el peso de formar las próximas generaciones, pero necesitamos herramientas 
-                  que nos hagan verdaderamente poderosos."
-                </p>
-                <p className="text-gray-600">
-                  Así nació esta comunidad: un espacio donde los docentes no solo sobreviven, sino que prosperan 
-                  y se convierten en los héroes que sus estudiantes merecen.
+                <p className="text-gray-600 mt-4">
+                  Años después, me convertí de volver viral y cambié mi vida por completo.
                 </p>
               </div>
 
               {/* Values */}
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold mb-6">Lo que me impulsa cada día:</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#005cf0] rounded-full mt-2 mr-4"></div>
-                    <p className="text-gray-600"><strong>Impacto real:</strong> Cada docente que ahorra tiempo es una victoria</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#ff6f3c] rounded-full mt-2 mr-4"></div>
-                    <p className="text-gray-600"><strong>Accesibilidad:</strong> La IA debe ser para todos, no solo para expertos</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#005cf0] rounded-full mt-2 mr-4"></div>
-                    <p className="text-gray-600"><strong>Comunidad:</strong> Juntos somos más fuertes que cada uno por separado</p>
-                  </div>
-                </div>
+              <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-8 rounded-xl border border-blue-100">
+                <h2 className="text-2xl font-bold mb-4 flex items-center">
+                  <Lightbulb className="w-6 h-6 text-[#ff6f3c] mr-3" />
+                  Y quiero hacer lo mismo contigo y con todas las personas que pueda.
+                </h2>
+                <p className="text-gray-600 mb-4">
+                  No quiero que seas una persona más del montón, que no cumple sus sueños, que se deja llevar por el mundo y que no vive con propósito.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Creo que tú también quieres vivir.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Al contrario, quieres ser mejor persona
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Quieres cumplir tus sueños.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Quieres cambiar el mundo.
+                </p>
+                <p className="text-gray-600">
+                  Y sin conocerte, sé que tienes el potencial para ser esa persona por el simple hecho de estar vivo.
+                </p>
+                <p className="text-gray-600 mt-4">
+                  No puedo hacer que tu problema desaparezcan, pero puedo darte las herramientas para superarlo.
+                </p>
               </div>
             </div>
           </div>
@@ -128,4 +127,4 @@ const SobreMi = () => {
   );
 };
 
-export default SobreMi;
+export default Bio;
