@@ -42,7 +42,7 @@ const Bio = () => {
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                 <h2 className="text-2xl font-bold mb-4 flex items-center">
                   <Heart className="w-6 h-6 text-red-500 mr-3" />
-                  ¿Qué he hablado? Soy Renzo Echávez
+                  ¿Qué he hablado? Soy Renzo Vigiani
                 </h2>
                 <p className="text-gray-600 mb-4">
                   Llevo 7 años de experiencia en el área del desarrollo personal.
