@@ -1,0 +1,36 @@
+# .github/workflows/deploy.yml
+name: Build static site and push to 'deploy'
+
+on:
+  push:
+    branches: [ main ]          # main recibe los cambios de lovable
+  workflow_dispatch:            # te deja lanzarlo a mano si querés
+  schedule:
+    - cron: "0 9 * * *"         # opcional: build diario 09:00 UTC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20        # o 18 LTS
+
+    - name: Install deps & build
+      run: |
+        npm ci                  # instala dependencias
+        npm run build           # genera carpeta dist/
+
+    # commit dist/ a rama deploy (fuerza clean)
+    - name: Push dist to deploy branch
+      run: |
+        git config --global user.email "github-actions@users.noreply.github.com"
+        git config --global user.name  "GitHub Action"
+        git checkout --orphan deploy
+        git --work-tree dist add --all
+        git --work-tree dist commit -m "Deploy $(date '+%Y-%m-%d %H:%M')"
+        git push -f origin deploy
