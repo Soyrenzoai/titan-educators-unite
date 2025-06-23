@@ -1,16 +1,16 @@
 
 import { Link } from "react-router-dom";
-import { Zap } from "lucide-react";
+import { Zap, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#0A0A0A] text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#005cf0] to-[#ff6f3c] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#005CF0] to-[#FF6F3C] rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold text-xl">Titanes de la Educación</span>
@@ -31,13 +31,35 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Social Links */}
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Política de privacidad</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Términos de uso</a></li>
-            </ul>
+            <h3 className="font-semibold mb-4">Sígueme</h3>
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/soyrenzoai/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@soyrenzoai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <div className="w-6 h-6 font-bold text-sm flex items-center justify-center">TT</div>
+              </a>
+              <a 
+                href="https://www.youtube.com/@rlvigiani" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Youtube className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         </div>
 

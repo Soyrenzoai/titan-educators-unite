@@ -1,93 +1,122 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ConvertKitForm from "@/components/ConvertKitForm";
-import { Mail, Users, BookOpen, Star } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
+import { useEffect } from "react";
 
 const Newsletter = () => {
+  useEffect(() => {
+    // Load ConvertKit script
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-uid', '411fb161db');
+    script.src = 'https://soyrenzoai.kit.com/411fb161db/index.js';
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[data-uid="411fb161db"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f7f9fc] to-white">
+    <div className="min-h-screen bg-[#F7F9FC]">
       <Navigation />
       
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              IMPULSA TU 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005cf0] to-[#ff6f3c]"> VIDA</span>
-            </h1>
-            <div className="inline-block bg-gradient-to-r from-[#005cf0] to-[#ff6f3c] text-white px-6 py-3 rounded-full text-lg font-semibold mb-8">
-              CONSEJOS PRÁCTICOS PARA SER MEJOR
+            <div className="inline-flex items-center bg-gradient-to-r from-[#005CF0] to-[#FF6F3C] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <Mail className="w-4 h-4 mr-2" />
+              Newsletter semanal
             </div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Únete a +90,000 personas que reciben semanalmente consejos prácticos para construir una gran vida.
+            <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-6">
+              Tip de IA cada lunes
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Únete a +300 docentes que reciben un prompt listo para usar y recursos exclusivos.
             </p>
+          </div>
+
+          {/* ConvertKit Form Embed Area */}
+          <div className="max-w-md mx-auto mb-16">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div id="convertkit-form" className="min-h-[200px] flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <Mail className="w-8 h-8 mx-auto mb-2" />
+                  <p>Cargando formulario...</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-gray-500 text-center mt-4">
+              Libres de spam. Baja en un clic.
+            </p>
+          </div>
+
+          {/* Preview Last Issue */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-8 mb-16">
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
+                <div className="inline-block bg-[#FF6F3C]/10 text-[#FF6F3C] px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                  Última edición
+                </div>
+                <h3 className="text-2xl font-bold text-[#0A0A0A] mb-4">
+                  5 prompts para corregir exámenes al instante
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Descubre cómo reducir horas de corrección con estas plantillas de IA probadas por +300 docentes...
+                </p>
+                <button className="inline-flex items-center text-[#005CF0] font-semibold hover:underline">
+                  Leer edición completa
+                  <ArrowRight className="ml-1 w-4 h-4" />
+                </button>
+              </div>
+              <div className="ml-8 hidden md:block">
+                <div className="w-24 h-32 bg-gradient-to-br from-[#005CF0] to-[#FF6F3C] rounded-lg flex items-center justify-center">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Benefits */}
-          <div className="mb-12">
-            <ul className="space-y-4 text-lg text-gray-700 max-w-2xl mx-auto">
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-[#005cf0] rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                <span>Empieza tu semana con impulso</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-[#ff6f3c] rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                <span>Ideas y reflexiones que te inspirarán a vivir una gran vida</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-[#005cf0] rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                <span>Aprende de estrategias que realmente funcionan</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-[#ff6f3c] rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                <span>3 consejos semanales para vivir una gran vida</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter Form */}
-          <div className="max-w-md mx-auto mb-16">
-            <ConvertKitForm 
-              title="Impulsa tu Vida"
-              description="Cada lunes recibirás consejos prácticos para construir una gran vida. Al suscribirte te regalo mi Habit Tracker para ayudarte a construir hábitos poderosos."
-              buttonText="Suscribirme"
-              placeholder="Escribe tu correo electrónico..."
-            />
-          </div>
-
-          {/* Additional Info */}
-          <div className="text-center mb-16">
-            <h3 className="text-2xl font-bold mb-6">¿Quieres conectar con una audiencia que realmente importa?</h3>
-            <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-              Si tu marca busca llegar a miles de personas dedicadas al crecimiento personal y profesional, este newsletter es la 
-              plataforma ideal para ti. Nuestra comunidad está compuesta por líderes comprometidos, activos y en constante búsqueda 
-              de nuevas ideas, herramientas y soluciones.
-            </p>
-            <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-              Hablemos sobre cómo podemos potenciar tu marca y llevar tu mensaje directamente a una audiencia que ya está lista para 
-              escucharte.
-            </p>
-            <button className="bg-gradient-to-r from-[#005cf0] to-[#ff6f3c] text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
-              Descubre más sobre nuestras oportunidades de patrocinio
-            </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-bold text-lg mb-3 text-[#0A0A0A]">📧 Cada lunes en tu inbox</h4>
+              <p className="text-gray-600">Un email semanal con el prompt de la semana, listo para copiar y pegar.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-bold text-lg mb-3 text-[#0A0A0A]">🎯 Casos reales</h4>
+              <p className="text-gray-600">Ejemplos prácticos de docentes que ya están ahorrando tiempo con IA.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-bold text-lg mb-3 text-[#0A0A0A]">🔧 Herramientas gratuitas</h4>
+              <p className="text-gray-600">Acceso prioritario a plantillas y recursos antes que el resto.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-bold text-lg mb-3 text-[#0A0A0A]">⏱️ Lectura de 3 minutos</h4>
+              <p className="text-gray-600">Contenido directo y accionable que puedes implementar el mismo día.</p>
+            </div>
           </div>
 
           {/* Stats */}
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="bg-gradient-to-r from-[#005CF0] to-[#FF6F3C] rounded-lg p-8 text-white text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <div className="text-3xl font-bold text-[#005cf0] mb-2">+90,000</div>
-                <p className="text-gray-600">Suscriptores activos</p>
+                <div className="text-3xl font-bold mb-2">+300</div>
+                <p className="opacity-90">Docentes suscritos</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#ff6f3c] mb-2">40%</div>
-                <p className="text-gray-600">Tasa de apertura</p>
+                <div className="text-3xl font-bold mb-2">45%</div>
+                <p className="opacity-90">Tasa de apertura</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#005cf0] mb-2">5+</div>
-                <p className="text-gray-600">Años enviando valor</p>
+                <div className="text-3xl font-bold mb-2">18+</div>
+                <p className="opacity-90">Meses enviando valor</p>
               </div>
             </div>
           </div>
